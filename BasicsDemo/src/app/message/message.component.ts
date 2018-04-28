@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MessageComponent implements OnInit {
 
+  successMessage: string = "Success Message";
+
   constructor() { }
 
   ngOnInit() {
