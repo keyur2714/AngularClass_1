@@ -1,0 +1,8 @@
+<h1>
+  manage-friends works!
+</h1>
+<input type=text #name />
+<button (click)="addFiend(name.value)">Add Friend</button>
+<ul *ngFor="let friendName of friendNames">
+  <li>{{friendName}}</li>  
+</ul>
