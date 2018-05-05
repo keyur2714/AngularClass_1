@@ -1,0 +1,28 @@
+Product Id: <input type=text #pid /> <br/>
+Product Code: <input type=text #code /> <br/>
+Product Description: <input type=text #description /> <br/>
+Product Price: <input type=text #price /> <br/>
+Product Quantity: <input type=text #quantity /> <br/>
+
+<button (click)="addProduct(pid.value,code.value,description.value,price.value,quantity.value)">Add Product</button>
+
+<br />
+
+<table class="table">
+  <tr>
+     <th>Product Id</th> 
+     <th>Code</th> 
+     <th>Description</th> 
+     <th>Price</th> 
+     <th>Quantity</th>
+     <th>Action</th>
+  </tr>
+  <tr *ngFor="let product of products;let i=index">
+    <td>{{product.pid}}</td>
+    <td>{{product.code}}</td>
+    <td>{{product.description}}</td>
+    <td>{{product.price}}</td>
+    <td>{{product.quantity}}</td>
+    <td>Edit|Delete</td>
+  </tr>  
+</table>
