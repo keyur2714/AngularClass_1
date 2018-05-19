@@ -7,7 +7,29 @@
 <app-success-message *ngFor="let m of messages" [msg]="m">
 </app-success-message> -->
 
+<!-- <app-dept-list (getSelectedDeptEvent)="getDepartment($event)"></app-dept-list>
+
+<br/>
+<h3>Selected Dept is: {{selectedDepartment.name}}</h3>
+
 <app-custom-grid [displayHeaderNames]="displayColumnNames" [headerNames]="columnNames" [dataList]="friendObjList">
 </app-custom-grid>
 
 <app-item></app-item>
+ -->
+<app-server (getServer)="getServer($event)">
+    Enter Server Details
+</app-server>
+
+<br />
+<ul>
+    <li *ngFor="let server of serverList">
+        {{server.serverName}} =>{{server.serverOs}}
+    </li>
+</ul>
+<app-numberutil></app-numberutil>
+<input type=number #num1 />
+<input type=number #num2 />
+<button (click)="add(num1.value,num2.value)">+</button>
+<br />
+Result is: {{result}}

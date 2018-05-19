@@ -1,0 +1,9 @@
+<select name="selectedDepartment" [(ngModel)]="selectedDepartment" (change)="getSelectedValue()">
+  <option *ngFor="let dept of deptList" [ngValue]="dept">
+    {{dept.name}}
+  </option>
+</select>
+
+<input type=text name="name" [(ngModel)]="name"/>
+
+{{name}}
