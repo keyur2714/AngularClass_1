@@ -1,0 +1,63 @@
+<form [formGroup]="studentDetailForm" (ngSubmit)="save()">
+  <table>
+    <tr>
+      <td>Name</td>
+      <td><input type=text formControlName="name" name="name" [(ngModel)]="student.name"/></td>
+      <td>
+        <div *ngIf="studentDetailForm.get('name').errors">
+          <span *ngIf="studentDetailForm.get('name').touched && studentDetailForm.get('name').errors.required">Name is Required</span>        
+          <span *ngIf="studentDetailForm.get('name').touched && studentDetailForm.get('name').errors.minlength">Name is Min 3 Char</span>     
+          <span *ngIf="studentDetailForm.get('name').touched && studentDetailForm.get('name').errors.pattern">Name is not in valid format</span>           
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td>Age</td>
+      <td><input type=text formControlName="age" name="age" [(ngModel)]="student.age" /></td>
+      <td>
+        <span *ngIf="studentDetailForm.get('age').touched && studentDetailForm.get('age').invalid">Age is Required</span>        
+      </td>
+    </tr>    
+    <div formGroupName="address">
+      <tr>
+        <td>City</td>
+        <td><input type=text formControlName="city" name="city" [(ngModel)]="student.city"/></td>
+        <td>          
+          <span *ngIf="studentDetailForm.controls['address'].get('city').touched && studentDetailForm.controls['address'].get('city').invalid">City is Required</span>
+        </td>
+      </tr>
+      <tr>
+        <td>Mobile No</td>
+        <td><input type=number formControlName="mobileNo" name="mobileNo" [(ngModel)]="student.mobileNo" /></td>
+        <td>
+          <span *ngIf="studentDetailForm.controls['address'].get('mobileNo').touched && studentDetailForm.controls['address'].get('mobileNo').invalid">City is Required</span> 
+        </td>
+      </tr>
+    </div>
+    <span *ngIf="studentDetailForm.controls['address'].invalid">Address is In valid</span>
+    <div formArrayName="hobbies">
+    <tr *ngFor="let hobby of studentDetailForm.get('hobbies').controls;let i=index">
+        <td >
+         Hobby {{i+1}}:                
+        </td>
+        <td>
+         <input type=text [formControlName]="i" [(ngModel)]="student.hobbies[i]" />        
+        </td>
+    </tr>
+    <button type="button" (click)="addHobby()">Add Hobby</button>
+    </div>    
+    <tr>
+     <td colspan="2"><button type="submit" [disabled]="studentDetailForm.invalid">Save</button></td>
+    </tr>    
+  </table> 
+</form>
+<div *ngIf="isSubmitted">
+  Name: {{student.name}} <br/>
+  Age: {{student.age}} <br/>
+  City: {{student.city}} <br/>
+  Mobile No: {{student.mobileNo}} <br/>
+  Hobbies: 
+  <div *ngFor="let hobby of student.hobbies">
+      {{hobby}}, 
+  </div>
+</div>
