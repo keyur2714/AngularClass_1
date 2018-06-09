@@ -18,6 +18,7 @@ Component Communication
 -- Forms
 	1. Template Driven Forms
 	2. Reactive Forms
+======================
 -- DI & Services
 	1. Dependency Injection
 	2. Services / Providers

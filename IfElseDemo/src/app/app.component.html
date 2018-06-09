@@ -2,11 +2,11 @@
 
 <h1>With Normal If Condition</h1>
 
-<div *ngIf="age >= 18">
+<div [ngClass]="'myDiv'" *ngIf="age >= 18">
   You can vote for country..!
 </div>
 
-<div *ngIf="age < 18">
+<div [ngClass]="'myDiv'" *ngIf="age < 18">
   You can not vote for country..!
 </div>
 <hr/>
