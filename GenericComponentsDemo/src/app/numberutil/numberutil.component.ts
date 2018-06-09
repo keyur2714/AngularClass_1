@@ -2,12 +2,14 @@ import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-numberutil',
-  templateUrl: './numberutil.component.html',
+  template: ``,
   styleUrls: ['./numberutil.component.css']
 })
 export class NumberutilComponent implements OnInit {
 
-  constructor() { }
+  constructor() { 
+    console.log(111);
+  }
 
   ngOnInit() {
   }
