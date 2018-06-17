@@ -1,5 +1,13 @@
-<h1>{{title}}</h1>
-<hr/>
-<app-book-list></app-book-list>
-<!-- <hr/>
-<app-book-entry></app-book-entry> -->
+<div class="container-fluid">
+    <nav class="navbar navbar-expand-sm bg-info navbar-dark">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/home">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/book-list">Manage Books</a>
+        </li>      
+      </ul>
+    </nav>
+    <router-outlet></router-outlet>
+</div>
