@@ -36,10 +36,6 @@ export class BookService{
         return bookList;
     }
 
-    // getBookListObservable():Observable<Response>{
-    //     return this.http.get(this.appUrl);
-    // }
-
      getBookListObservable():Observable<Response>{
          return this.http.get(this.appUrl);
      }

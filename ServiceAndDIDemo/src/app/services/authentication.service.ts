@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { User } from '../model/user.model';
+import { tokenNotExpired } from 'angular2-jwt';
 @Injectable()
 export class AuthenticationService{
 
@@ -11,6 +12,17 @@ export class AuthenticationService{
     isValid:boolean = false;
     loggedInUser: User = null;
 
+    public getToken(): string {
+        return localStorage.getItem('token');
+    }
+    public isAuthenticated(): boolean {
+        // get the token
+        const token = this.getToken();
+        // return a boolean reflecting 
+        // whether or not the token is expired
+        return tokenNotExpired(null, token);
+    }
+
     authenticate(userName:string,password:String):boolean{
         if(userName === 'keyur' && password === 'India@1'){
             this.isValid = true;
@@ -19,6 +31,7 @@ export class AuthenticationService{
             user.role = 'ADMIN';
             user.token = 'ABC';
             this.loggedInUser = user;
+            localStorage.setItem('token','abc');
         }
         return this.isValid;
     }

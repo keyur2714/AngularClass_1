@@ -10,7 +10,7 @@ inbuild directives
 	ngFor
 	ngIf
 	ngModel (two way bindigs)
-Custome Directives
+Custome Directives	
 Component Communication	
 	Input
 	Output
@@ -22,19 +22,21 @@ Component Communication
 -- DI & Services
 	1. Dependency Injection
 	2. Services / Providers
--- local storage/session storage
+
+-- local storage/session storage 
 -- Observable from RXJS
 	-- operators (map/switch map/catch)
 -- HttpModule	
--- Routing Module & Routing with Lazy Loading
--- Aunticationn & Authorization
-	-- Http Interceptor
-	-- JWT 
-	-- Routing with guards
+-- Routing Module & Routing with 
+Lazy Loading ::
+-- Aunticationn & Authorization 
+	-- Http Interceptor 
+	-- JWT  
+	-- Routing with guards - 
 ------------Start small project----
-Pipes Inbuilt & custome pipe
-Unit Testing
-Animations
+Pipes Inbuilt & custome pipe 
+Unit Testing ::
+Animations ::
 Deployments-- how to deploy on server	
 		
 

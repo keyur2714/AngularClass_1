@@ -12,7 +12,8 @@ import { AuthenticationService } from './services/authentication.service';
 import { AuthGuard } from './services/auth.guard';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
-
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { TokenInterceptor } from './services/token.interceptor';
 @NgModule({
   declarations: [
     AppComponent,
@@ -28,7 +29,16 @@ import { LoginComponent } from './login/login.component';
     FormsModule,
     AppRoutingModule
   ],  
-  providers: [LoggingService,AuthenticationService,AuthGuard],
+  providers: [
+    LoggingService,
+    AuthenticationService,
+    AuthGuard,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: TokenInterceptor,
+      multi: true
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
