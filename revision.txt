@@ -1,0 +1,212 @@
+
+	Revision
+--Setup
+	Node JS
+		node -v
+		npm -v
+	Angular CLI
+		-g
+	VSC
+-- CLI -- 
+	ng new projectName
+	ng serve
+	- 4200	
+	ng serve --port=4201 --host=
+------------
+Basics
+- create component
+	angular/core	
+@Component		
+		- selector
+		- templateUrl
+		- tmplate
+		- styleUrl ''
+		- styles []
+		- providers:
+		- animations:	
+	ng g c cname
+@NgModule
+	- package or namespace or headerfile
+		- declarition
+			<component>
+			<pipes>
+			<directive>	 
+		- imports
+			<modules>
+			<custome modules>
+		- exports
+			[<component>]
+		- providers
+			<services>
+		- bootstrap
+			<load on startup>
+angular.json
+	main configuration files
+		- change project structure
+		- change welcome file	
+		- change main.ts
+		- you can change/add new
+		 global css files
+main.ts
+index.html
+
+global css: styles.css
+	bootstrap css
+
+-- component
+	selector
+	.html -- template
+	component.ts -- model
+	
+	{{title}} -- 
+	{{5 + 5}}		
+-- Basic operations
+	event binding ()="methodName"
+	property binding = ["variable"] - 
+-- inbuild directives
+	*ngIf
+- ngTemplate	
+	*ngFor
+	*ngSwitch
+	ngClass
+-- local reference variable -- #id
+	
+-- Component communications	
+@Input - parent to child
+	<app-message [message]="msg">	
+	</app-message>	
+@Output- child to parent
+	event for custome  component
+	<app-message [message]="msg"
+	(getMessage)="getMessage($event)"
+	>
+	</app-message>		
+- EventEmmiter<type>	
+@Viewchild
+- local ref variable will become class level variable		- if we want component reference in another component
+- custome directive ref in another component	
+
+-- custome directive
+	- @Directive
+		selector
+	- @Input() -- attribute directive
+	
+	constructor(elementRef)
+	
+	ngAfterViewInit()
+-- structiral custome directive
+		TemplateRef
+		ViewContainerRef
+	*
+-- DI
+- creation of object will be taken care by angular		
+- constructor DI	
+- you need to define in PROVIDERS
+
+--service
+	simple class
+	@Injectable
+		if service also inject another service
+
+-- Forms
+	- Template Driven Forms
+		-- FormsModule angular/forms
+		* - ngForm 
+		* - ngModel
+		ngTouched/ngValid
+	- Reactive Forms	
+		-- ReactiveFormsModule
+		
+		FormBuilder
+		FormGroup
+		FormControl : Validators
+		FormArray	
+		
+	-- template [formGroupName]=""
+		[formControlName]=""
+
+HttpModule
+Dummy API
+	JSON SERVER
+	
+	HttpMethods
+		- get - search/fetch
+		- post - save/append
+		- put - updae/ 
+		- delete - delete
+		Http
+	@angulr/common/http
+		HttpClient<object>
+	
+	- return Observable
+-Observable * rxjs/Observable
+	-- data provider
+	-- subscribe - hit web url
+	-- map
+	-- catch
+	-- interval
+-- Inerceptor
+	-- only works with HttpClient
+	-- called before req and after processing req
+	
+-- session storage 
+-- local storage	
+	JWT -- json web token
+
+-- pipes
+	-- data transform on template
+	inbuilt pipes
+	custome pipes
+		@Pipe()
+-- Router 
+	@angular/router
+	navigation
+		routerLink
+		routerLinkActivate
+		routes
+			[path: component,]
+	RouterModule.forRoot(<routes array>)
+	
+	- Route Guards
+		- Authorization
+		* canActivate
+		* canActivateChild
+		
+	Router service : 
+		navigate
+		
+		[routerParam]	
+		
+		:/id -- path variable
+		?name='keyur' queryParam
+	
+	Location Service
+		forward
+		back	
+-- Animations
+	-- trigger
+		- state
+		- transition
+	[@triggerName]="stateValue"	
+	
+	@HostBinding
+-- Angular Material
+	- google created component
+	- npm i --save @angular/material
+-- bootstrap
+	- npm i --save bootstrap		
+-- Deployements
+	-- ng build
+	-- ng build --prod
+	-- baseHref=BMS
+ -- copy from dist folder and put inside BMS of server	
+- JIT / AOT	
+---Testing *
+	unit testing
+	- jamine for API
+	- karma
+-- e2e
+-- ModelPopup	
+	
+	
+		

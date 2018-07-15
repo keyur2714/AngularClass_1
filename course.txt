@@ -35,8 +35,8 @@ Lazy Loading ::
 	-- Routing with guards - 
 ------------Start small project----
 Pipes Inbuilt & custome pipe 
-Unit Testing ::
-Animations ::
+Unit Testing :: --
+Animations 
 Deployments-- how to deploy on server	
 		
 
